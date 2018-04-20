@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = sudo docker.build("getintodevops/hellonode")
+        app = docker.build("getintodevops/hellonode")
     }
 
     stage('Test image') {
@@ -19,7 +19,7 @@ node {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         app.inside {
-            sudo sh 'echo "Tests passed"'
+            sh 'echo "Tests passed"'
         }
     }
 
